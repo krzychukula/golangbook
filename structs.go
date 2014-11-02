@@ -9,6 +9,18 @@ type Shape interface {
 	area() float64
 }
 
+type MultiShape struct {
+	shapes []Shape
+}
+
+func (m *MultiShape) area() float64 {
+	var area float64
+	for _, s := range m.shapes {
+		area += s.area()
+	}
+	return area
+}
+
 type Circle struct {
 	x float64
 	y float64
@@ -35,19 +47,12 @@ func (r *Rectangle) area() float64 {
 	return l * w
 }
 
-func totalArea(shapes ...Shape) float64 {
-	var area float64
-	for _, s := range shapes {
-		area += s.area()
-	}
-	return area
-}
-
 func main() {
 	r := Rectangle{0, 0, 10, 10}
 	c := Circle{0, 0, 5}
+	m := MultiShape{shapes: []Shape{&c, &r}}
 
 	fmt.Println(r.area())
 	fmt.Println(c.area())
-	fmt.Println(totalArea(&c, &r))
+	fmt.Println(m.area())
 }
