@@ -34,4 +34,19 @@ func main() {
 		fmt.Println("no Un")
 	}
 
+	complex := map[string]map[string]string{
+		"H": map[string]string{
+			"name":  "Hydrogen",
+			"state": "gas",
+		},
+		"He": map[string]string{
+			"name":  "Helium",
+			"state": "gas",
+		},
+	}
+
+	if el, ok := complex["He"]; ok {
+		fmt.Println(el["name"], el["state"])
+	}
+
 }
