@@ -25,4 +25,7 @@ func main() {
 
 	fmt.Println(elements["Un"])
 
+	name, ok := elements["Un"]
+	fmt.Println(name, ok)
+
 }
