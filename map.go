@@ -28,4 +28,10 @@ func main() {
 	name, ok := elements["Un"]
 	fmt.Println(name, ok)
 
+	if name, ok := elements["Un"]; ok {
+		fmt.Println(name, ok)
+	} else {
+		fmt.Println("no Un")
+	}
+
 }
