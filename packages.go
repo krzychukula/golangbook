@@ -1,10 +1,10 @@
 package main
 
 import "fmt"
-import "github.com/krzychukula/golangbook/math"
+import m "github.com/krzychukula/golangbook/math"
 
 func main() {
 	xs := []float64{1, 2, 3, 4}
-	avg := math.Average(xs)
+	avg := m.Average(xs)
 	fmt.Println(avg)
 }
